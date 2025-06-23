@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HealthCare - Clínica médica com atendimento de excelência, tecnologia avançada e profissionais especializados para toda sua família. Agende sua consulta online.">
+    <meta name="keywords" content="saúde, clínica médica, consulta, emergência, cardiologia, neurologia, oftalmologia, pediatria, agendamento online">
+    <meta name="author" content="HealthCare">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>HealthCare - Sua Saúde é Nossa Prioridade | Clínica Médica</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <!-- Skip Link para Acessibilidade -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i data-lucide="heart-pulse" aria-hidden="true"></i>
+                    <span>HealthCare</span>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="#inicio" class="nav-link">Início</a></li>
+                        <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                        <li><a href="#equipe" class="nav-link">Equipe</a></li>
+                        <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+                        <li><a href="#contato" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button type="button" class="btn btn-outline-small" onclick="openWhatsApp()" aria-label="Contato via WhatsApp">
+                        <i data-lucide="phone" aria-hidden="true"></i>
+                        <span class="btn-text">Emergência</span>
+                    </button>
+                    <button type="button" class="btn btn-primary-small" onclick="openAgendamento()" aria-label="Agendar consulta online">
+                        <i data-lucide="calendar" aria-hidden="true"></i>
+                        <span class="btn-text">Agendar</span>
+                    </button>
+                    <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menu de navegação">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="hero-medical-bg" id="heroBackground"></div>
+            <div class="hero-background">
+                <div class="hero-pattern">
+                    <div class="heart-icon heartbeat">
+                        <i data-lucide="heart" aria-hidden="true"></i>
+                    </div>
+                    <div class="shield-icon">
+                        <i data-lucide="shield" aria-hidden="true"></i>
+                    </div>
+                    <div class="dot dot-1"></div>
+                    <div class="dot dot-2"></div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-texts">
+                        <h1 class="hero-title">
+                            Sua Saúde é Nossa
+                            <span class="hero-subtitle">Prioridade</span>
+                        </h1>
+                        <p class="hero-description">
+                            Cuidado médico de excelência com tecnologia avançada e profissionais especializados para toda sua família. Agende sua consulta online e tenha atendimento humanizado.
+                        </p>
+                        <div class="hero-buttons">
+                            <button type="button" class="btn btn-primary" onclick="openAgendamento()" aria-label="Agendar Consulta Online">
+                                <i data-lucide="calendar" aria-hidden="true"></i>
+                                Agendar Consulta
+                            </button>
+                            <button type="button" class="btn btn-outline" onclick="openWhatsApp()" aria-label="Contato para Emergência 24h">
+                                <i data-lucide="phone" aria-hidden="true"></i>
+                                Emergência 24h
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="hero-mascot">
+                        <img src="imagens/fd6cdd7c-56a8-4cd5-af5a-15149f0f8430.jpg" alt="Médico sorridente com estetoscópio demonstrando confiança e profissionalismo" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="servicos">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Nossos Serviços</h2>
+                    <p class="section-description">
+                        Oferecemos uma ampla gama de serviços médicos com qualidade e excelência, utilizando equipamentos de última geração
+                    </p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card" onclick="openServiceModal('clinica-geral')" role="button" tabindex="0" aria-label="Saiba mais sobre Clínica Geral">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <i data-lucide="stethoscope" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="service-title">Clínica Geral</h3>
+                        </div>
+                        <p class="service-description">
+                            Atendimento médico completo para toda a família com profissionais experientes e cuidado humanizado.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">Consultas</span>
+                            <span class="feature-tag">Check-ups</span>
+                            <span class="feature-tag">Preventivo</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card" onclick="openServiceModal('cardiologia')" role="button" tabindex="0" aria-label="Saiba mais sobre Cardiologia">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <i data-lucide="heart" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="service-title">Cardiologia</h3>
+                        </div>
+                        <p class="service-description">
+                            Especialistas em saúde cardiovascular com equipamentos de última geração para diagnóstico preciso.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">ECG</span>
+                            <span class="feature-tag">Ecocardiograma</span>
+                            <span class="feature-tag">Holter</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card" onclick="openServiceModal('neurologia')" role="button" tabindex="0" aria-label="Saiba mais sobre Neurologia">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <i data-lucide="brain" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="service-title">Neurologia</h3>
+                        </div>
+                        <p class="service-description">
+                            Diagnóstico e tratamento especializado de distúrbios do sistema nervoso central e periférico.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">EEG</span>
+                            <span class="feature-tag">Eletroneuromiografia</span>
+                            <span class="feature-tag">Doppler</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card" onclick="openServiceModal('oftalmologia')" role="button" tabindex="0" aria-label="Saiba mais sobre Oftalmologia">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <i data-lucide="eye" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="service-title">Oftalmologia</h3>
+                        </div>
+                        <p class="service-description">
+                            Cuidados completos para a saúde dos seus olhos com tecnologia avançada em diagnóstico.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">Consultas</span>
+                            <span class="feature-tag">Cirurgias</span>
+                            <span class="feature-tag">Lentes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card" onclick="openServiceModal('pediatria')" role="button" tabindex="0" aria-label="Saiba mais sobre Pediatria">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <i data-lucide="baby" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="service-title">Pediatria</h3>
+                        </div>
+                        <p class="service-description">
+                            Cuidado especializado para crianças desde o nascimento até a adolescência com ambiente acolhedor.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">Puericultura</span>
+                            <span class="feature-tag">Vacinas</span>
+                            <span class="feature-tag">Urgências</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card" onclick="openServiceModal('farmacia')" role="button" tabindex="0" aria-label="Saiba mais sobre Farmácia">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <i data-lucide="pill" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="service-title">Farmácia</h3>
+                        </div>
+                        <p class="service-description">
+                            Medicamentos de qualidade com orientação farmacêutica especializada e entrega em domicílio.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">Medicamentos</span>
+                            <span class="feature-tag">Delivery</span>
+                            <span class="feature-tag">Orientação</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i data-lucide="users" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-number" data-target="50000">0</div>
+                        <div class="stat-label">Pacientes Atendidos</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i data-lucide="award" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-number" data-target="25">0</div>
+                        <div class="stat-label">Anos de Experiência</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i data-lucide="clock" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Atendimento de Emergência</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i data-lucide="heart" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-number" data-target="98">0</div>
+                        <div class="stat-label">Satisfação dos Pacientes</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Convenios Section -->
+        <section class="convenios">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Convênios Aceitos</h2>
+                    <p class="section-description">
+                        Trabalhamos com os principais planos de saúde do mercado
+                    </p>
+                </div>
+                
+                <div class="convenios-grid">
+                    <div class="convenio-item">
+                        <div class="convenio-logo">
+                            <i data-lucide="shield-check" aria-hidden="true"></i>
+                        </div>
+                        <span>Unimed</span>
+                    </div>
+                    <div class="convenio-item">
+                        <div class="convenio-logo">
+                            <i data-lucide="shield-check" aria-hidden="true"></i>
+                        </div>
+                        <span>Bradesco Saúde</span>
+                    </div>
+                    <div class="convenio-item">
+                        <div class="convenio-logo">
+                            <i data-lucide="shield-check" aria-hidden="true"></i>
+                        </div>
+                        <span>SulAmérica</span>
+                    </div>
+                    <div class="convenio-item">
+                        <div class="convenio-logo">
+                            <i data-lucide="shield-check" aria-hidden="true"></i>
+                        </div>
+                        <span>Amil</span>
+                    </div>
+                    <div class="convenio-item">
+                        <div class="convenio-logo">
+                            <i data-lucide="shield-check" aria-hidden="true"></i>
+                        </div>
+                        <span>NotreDame</span>
+                    </div>
+                    <div class="convenio-item">
+                        <div class="convenio-logo">
+                            <i data-lucide="shield-check" aria-hidden="true"></i>
+                        </div>
+                        <span>Particular</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team" id="equipe">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Nossa Equipe</h2>
+                    <p class="section-description">
+                        Profissionais qualificados e experientes dedicados ao seu bem-estar
+                    </p>
+                </div>
+                
+                <div class="team-grid">
+                    <button class="team-card" onclick="window.location.href='drs/dr-ana.html'" type="button">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face" alt="Dra. Ana Silva - Cardiologista especialista em arritmias">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Dra. Ana Silva</h3>
+                            <p class="team-specialty">Cardiologista</p>
+                            <p class="team-credentials">CRM 12345-SP | Especialista em Arritmias</p>
+                            <div class="team-experience">22 anos de experiência</div>
+                        </div>
+                        <span class="ver-perfil">Ver perfil</span>
+                    </button>
+                    
+                    <button class="team-card" onclick="window.location.href='drs/dr-carlos.html'" type="button">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face" alt="Dr. Carlos Santos - Neurologista especialista em epilepsia">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Dr. Carlos Santos</h3>
+                            <p class="team-specialty">Neurologista</p>
+                            <p class="team-credentials">CRM 23456-SP | Especialista em Epilepsia</p>
+                            <div class="team-experience">20 anos de experiência</div>
+                        </div>
+                        <span class="ver-perfil">Ver perfil</span>
+                    </button>
+                    
+                    <button class="team-card" onclick="window.location.href='drs/dr-maria.html'" type="button">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=400&h=400&fit=crop&crop=face" alt="Dra. Maria Costa - Pediatra especialista em neonatologia">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Dra. Maria Costa</h3>
+                            <p class="team-specialty">Pediatra</p>
+                            <p class="team-credentials">CRM 34567-SP | Especialista em Neonatologia</p>
+                            <div class="team-experience">12 anos de experiência</div>
+                        </div>
+                        <span class="ver-perfil">Ver perfil</span>
+                    </button>
+                    
+                    <button class="team-card" onclick="window.location.href='drs/dr-joao.html'" type="button">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=face" alt="Dr. João Oliveira - Oftalmologista especialista em retina">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Dr. João Oliveira</h3>
+                            <p class="team-specialty">Oftalmologista</p>
+                            <p class="team-credentials">CRM 45678-SP | Especialista em Retina</p>
+                            <div class="team-experience">18 anos de experiência</div>
+                        </div>
+                        <span class="ver-perfil">Ver perfil</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" id="depoimentos">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">O Que Nossos Pacientes Dizem</h2>
+                    <p class="section-description">
+                        Depoimentos reais de quem confia em nossos cuidados
+                    </p>
+                </div>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://conexaoplaneta.com.br/wp-content/uploads/2018/01/mulher-engenheira-civil-por-que-nao-brasil-de-cor-conexao-planeta.jpg" alt="Maria Santos">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4 class="testimonial-name">Maria Santos</h4>
+                                <div class="testimonial-stars" role="img" aria-label="5 estrelas">
+                                    <i data-lucide="star" class="star-filled" aria-hidden="true"></i>
+                                    <i data-lucide="star" class="star-filled" aria-hidden="true"></i>
+                                    <i data-lucide="star" class="star-filled" aria-hidden="true"></i>
+                                    <i data-lucide="star" class="star-filled" aria-hidden="true"></i>
+                                    <i data-lucide="star" class="star-filled" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">
+                            "Excelente atendimento! A Dra. Ana foi muito atenciosa durante minha consulta cardiológica. A equipe é muito profissional e o ambiente é acolhedor. Recomendo a todos."
+                        </p>
+                        <div class="testimonial-date">Há 2 semanas</div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="João Silva">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4 class="testimonial-name">João Silva</h4>
+                                <div class="testimonial-stars" role="img" aria-label="5 estrelas">
+                                    <i data-lucide="star" class="star-filled" aria-hidden="true"></i>
+                                    <i data-lucide="star" class="star-filled" aria-hidden="true"></i>
+                                    <i data-lucide="star" class="star-filled" aria-hidden="true"></i>
+                                    <i data-lucide="star" class="star-filled" aria-hidden="true"></i>
+                                    <i data-lucide="star" class="star-filled" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">
+                            "Fui muito bem atendido na emergência. O Dr. Carlos foi excepcional no diagnóstico. Médicos competentes e equipamentos modernos. Muito obrigado pela dedicação!"
+                        </p>
+                        <div class="testimonial-date">Há 1 mês</div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="Ana Costa">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4 class="testimonial-name">Ana Costa</h4>
+                                <div class="testimonial-stars" role="img" aria-label="5 estrelas">
+                                    <i data-lucide="star" class="star-filled" aria-hidden="true"></i>
+                                    <i data-lucide="star" class="star-filled" aria-hidden="true"></i>
+                                    <i data-lucide="star" class="star-filled" aria-hidden="true"></i>
+                                    <i data-lucide="star" class="star-filled" aria-hidden="true"></i>
+                                    <i data-lucide="star" class="star-filled" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">
+                            "Acompanho minha família há anos nesta clínica. A Dra. Maria é uma pediatra excepcional. Sempre com qualidade e carinho no atendimento. Confiança total!"
+                        </p>
+                        <div class="testimonial-date">Há 3 semanas</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-logo">
+                        <i data-lucide="heart-pulse" aria-hidden="true"></i>
+                        <span>HealthCare</span>
+                    </div>
+                    <p class="footer-description">
+                        Sua saúde é nossa prioridade. Oferecemos cuidados médicos de excelência 
+                        com tecnologia avançada e profissionais especializados há mais de 25 anos.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-btn" aria-label="Visitar nosso Facebook" target="_blank">
+                            <i data-lucide="facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-btn" aria-label="Visitar nosso Instagram" target="_blank">
+                            <i data-lucide="instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-btn" aria-label="Visitar nosso LinkedIn" target="_blank">
+                            <i data-lucide="linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Contato</h3>
+                    <div class="contact-item">
+                        <i data-lucide="phone" aria-hidden="true"></i>
+                        <a href="tel:+5511999999999">(11) 99999-9999</a>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="mail" aria-hidden="true"></i>
+                        <a href="mailto:contato@healthcare.com.br">contato@healthcare.com.br</a>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="map-pin" aria-hidden="true"></i>
+                        <span>Rua da Saúde, 123<br>São Paulo - SP, 01234-567</span>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Horários</h3>
+                    <div class="footer-hours">
+                        <p><strong>Segunda a Sexta:</strong><br>7:00 - 19:00</p>
+                        <p><strong>Sábado:</strong><br>8:00 - 14:00</p>
+                        <p><strong>Domingo:</strong><br>Emergência 24h</p>
+                        <p><strong>Emergência:</strong><br>24 horas por dia</p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="footer-divider">
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 HealthCare. Todos os direitos reservados. | <a href="#" class="footer-link">Política de Privacidade</a> | <a href="#" class="footer-link">Termos de Uso</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button type="button" class="back-to-top" id="backToTop" aria-label="Voltar ao topo da página">
+        <i data-lucide="arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Modals -->
+    <!-- Modal de Agendamento -->
+    <div class="modal" id="agendamentoModal" role="dialog" aria-labelledby="agendamentoTitle" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="agendamentoTitle">Agendar Consulta</h2>
+                <button type="button" class="modal-close" onclick="closeModal('agendamentoModal')" aria-label="Fechar modal">
+                    <i data-lucide="x" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="agendamento-form" id="agendamentoForm">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo *</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telefone">Telefone *</label>
+                            <input type="tel" id="telefone" name="telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="especialidade">Especialidade *</label>
+                            <select id="especialidade" name="especialidade" required>
+                                <option value="">Selecione uma especialidade</option>
+                                <option value="clinica-geral">Clínica Geral</option>
+                                <option value="cardiologia">Cardiologia</option>
+                                <option value="neurologia">Neurologia</option>
+                                <option value="oftalmologia">Oftalmologia</option>
+                                <option value="pediatria">Pediatria</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="convenio">Convênio</label>
+                            <select id="convenio" name="convenio">
+                                <option value="">Particular</option>
+                                <option value="unimed">Unimed</option>
+                                <option value="bradesco">Bradesco Saúde</option>
+                                <option value="sulamerica">SulAmérica</option>
+                                <option value="amil">Amil</option>
+                                <option value="notredame">NotreDame</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="observacoes">Observações</label>
+                        <textarea id="observacoes" name="observacoes" rows="3" placeholder="Descreva brevemente o motivo da consulta ou observações importantes"></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" onclick="closeModal('agendamentoModal')">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Confirmar Agendamento</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Serviço -->
+    <div class="modal" id="serviceModal" role="dialog" aria-labelledby="serviceTitle" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="serviceTitle">Detalhes do Serviço</h2>
+                <button type="button" class="modal-close" onclick="closeModal('serviceModal')" aria-label="Fechar modal">
+                    <i data-lucide="x" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="serviceModalBody">
+                <!-- Conteúdo será inserido dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .team-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .ver-perfil {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,123,255,0.9);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 0 0 12px 12px;
+            pointer-events: none;
+        }
+        .team-card:hover .ver-perfil,
+        .team-card:focus .ver-perfil {
+            display: block;
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+
